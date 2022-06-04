@@ -26,11 +26,14 @@ const handler = async (req, res) => {
 
   try {
     const hostUrl = `${serverPointing?.server}${url}`;
-    const respAxios =await axios({
+    const respAxios = await axios({
       method: method,
       headers: headers,
       url: hostUrl,
       data: body,
+      validateStatus: (status) => {
+        return status < 500;
+      },
     });
 
     res.status(respAxios.status).send(respAxios.data);

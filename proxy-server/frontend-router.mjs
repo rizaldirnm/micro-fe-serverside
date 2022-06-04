@@ -1,4 +1,5 @@
 export default {
+  // TODO: consider prefix path as Array, so that we can add multiple `prefix path` to poiting spesific server
   "/": {
     desc: "marketing app or we can call it on-boarding",
     server: "http://localhost:3001",
